@@ -1,6 +1,6 @@
 from fastapi import FastAPI,status,Depends,Depends, HTTPException
 
-import models, schemas, crud, utils
+import models, schemas, crud, utils, json
 from database import SessionLocal, engine
 
 from fastapi.responses import JSONResponse
@@ -34,6 +34,7 @@ def crear_usuario(usuario: schemas.UsuarioBase, db: Session = Depends(get_db)):
                                     detail='El correo ya se encuentra registrado')   
 
             user_save = crud.create_user(db=db, user=usuario)
+            user_save.phones = json.loads(user_save.phones)
             json_user_data = jsonable_encoder(user_save)
 
             return JSONResponse(content=json_user_data, status_code=status.HTTP_201_CREATED)

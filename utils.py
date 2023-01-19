@@ -1,9 +1,11 @@
 from jwt import encode
 from datetime import datetime, timedelta
-from fastapi.responses import JSONResponse
-import re
+import re, configparser
 
-SECRET_KEY = 'deff1952d59f883ece260e8683fed21ab0ad9a53323eca4f'
+parse = configparser.ConfigParser()
+parse.read('./config.ini')
+
+SECRET_KEY = parse['jwt']['SECRET_KEY'] 
 
 def expire_date(days: int):
     date = datetime.now()

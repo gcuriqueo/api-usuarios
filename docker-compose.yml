@@ -7,6 +7,4 @@ services:
             - POSTGRES_DB=namedb
         ports:
             - '5432:5432'
-        volumes:
-            - '$HOME/docker/volumes/postgres-db-api:/var/lib/postgresql/data'
         image: 'postgres:9.6'
