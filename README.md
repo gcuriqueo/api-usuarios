@@ -1,4 +1,4 @@
-- La actual API se desarrollo con Python3.7 y con el framework de FastApi 0.89
+- La actual API se desarrollo con Python 3.7 y con el framework de FastApi 0.89
 
 - Instalar librerias necesarias para ejecutar el proyecto:
 ```
@@ -16,3 +16,5 @@ docker-compose up -d
 - Levantar API:
 ```
 uvicorn main:app --host localhost --port 8000 --reload
+
+- Enviar los datos del usuario al endpoint `localhost:8000/crear_usuario` con el método `POST`
