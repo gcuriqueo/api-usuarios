@@ -19,4 +19,5 @@ uvicorn main:app --host localhost --port 8000 --reload
 ```
 - Enviar los datos del usuario al endpoint `localhost:8000/crear_usuario` con el método `POST`
 
-https://raw.githubusercontent.com/gcuriqueo/api-usuarios/main/img/img.png
+![img](https://raw.githubusercontent.com/gcuriqueo/api-usuarios/main/img/img.png)
+
