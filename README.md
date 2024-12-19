@@ -5,9 +5,15 @@
 pip install -r requirements.txt
 ```
 
-- Los datos se almacenan en una base de datos postgres, la cual se levanta con un contenedor de docker y las credenciales de acceso se especifican en el archivo `docker-compose.yml`. Las presentes credenciales deben coincidir con las que se especifican en la línea 5 del archivo `database.py`
+- Los datos se almacenan en una base de datos postgres, la cual se levanta con un contenedor de docker.
 
 - El DDL de la base de datos se puede encontrar en el archivo `script.sql`, pero no es necesario ejecutarlo ya que es el propio framework de FastApi quien se encarga de crear las tablas necesarias.
+
+- Crear un archivo `.env` en la raíz del proyecto con las siguientes variables de entorno:
+  - `POSTGRES_PASSWORD`
+  - `POSTGRES_USER`
+  - `POSTGRES_DB`
+  - `SECRET_KEY`
 
 - Levantar contenedor con base de datos:
 ```

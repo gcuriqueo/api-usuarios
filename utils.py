@@ -1,11 +1,11 @@
 from jwt import encode
 from datetime import datetime, timedelta
 import re, configparser
+from dotenv import load_dotenv
+import os
 
-parse = configparser.ConfigParser()
-parse.read('./config.ini')
-
-SECRET_KEY = parse['jwt']['SECRET_KEY'] 
+load_dotenv()
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 def expire_date(days: int):
     date = datetime.now()
